@@ -18,7 +18,7 @@ const index = () => {
       <StudentsSay/>
       <Questions/>
       <Workshop/>
-      dwdw
+      
     </div>
   )
 }

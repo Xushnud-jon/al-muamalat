@@ -10,7 +10,7 @@ import RegisterPage from './pages/AuthPage/_components/Register.jsx';
 function App() {
   return (
     <Router>
-      <div className="min-h-screen flex flex-col max-w-[1700px] m-auto ">
+      <div className="min-h-screen flex flex-col max-w-[1700px] m-auto  ">
         <ShowLayout>
           <Header />
         </ShowLayout>
