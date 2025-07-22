@@ -6,10 +6,11 @@ import ShowLayout from './components/showlayout.jsx';
 import Homepage from './pages/HomePage/index.jsx';
 import LoginPage from './pages/AuthPage/_components/Login.jsx';
 import RegisterPage from './pages/AuthPage/_components/Register.jsx';
-
+import 'react-toastify/dist/ReactToastify.css';
 function App() {
   return (
     <Router>
+
       <div className="min-h-screen flex flex-col max-w-[1700px] m-auto  ">
         <ShowLayout>
           <Header />
