@@ -16,9 +16,6 @@ const LoginPage = React.lazy(() => import('./pages/AuthPage/_components/Login'))
 const RegisterPage = React.lazy(() => import('./pages/AuthPage/_components/Register'));
 const ContactPage = React.lazy(() => import('./pages/Contact/index.jsx'));
 
-// Yuklash paytida ko'rsatiladigan komponent
-
-
 function App() {
   return (
     <Router>
@@ -28,7 +25,15 @@ function App() {
         </ShowLayout>
 
         <main className="flex-1">
-          <Suspense fallback={<ThreeDot variant="bounce" color="#32cd32" size="large" text="" textColor=""  />}>
+          <Suspense fallback={
+            <div className="flex justify-center items-center h-[80vh]">
+              <ThreeDot 
+                variant="bounce" 
+                color="#009688"
+                size="large"
+              />
+            </div>
+          }>
             <Routes>
               <Route path="/" element={<Homepage />} />
               <Route path="/international-programs" element={<InternationalPrograms />} />
@@ -37,8 +42,6 @@ function App() {
               <Route path="/certification" element={<CertificationProgram />} />
               <Route path="/login" element={<LoginPage />} />
               <Route path="/register" element={<RegisterPage />} />
-            </Routes>
-            <Routes>
               <Route path="/contact" element={<ContactPage />} />
             </Routes>
           </Suspense>
