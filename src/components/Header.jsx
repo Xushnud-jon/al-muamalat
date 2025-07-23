@@ -3,7 +3,7 @@ import Logo from '../assets/svg/logo.svg';
 import UzFlag from '../assets/images/uzb.png';
 import EnFlag from '../assets/images/eng.png';
 import RuFlag from '../assets/images/rus.png';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Header = () => {
   const navigate = useNavigate();
@@ -38,10 +38,10 @@ useEffect(() => {
   ];
 
   const dasturlar = [
-    { nomi: "International educational programs" },
-    { nomi: "Specialized courses" },
-    { nomi: "Islamic Finance Literacy Course" },
-    { nomi: "Certification program" }
+    { nomi: "International educational programs",  path: "/international-programs"  },
+    { nomi: "Specialized courses", path: "/specialized-courses"  },
+    { nomi: "Islamic Finance Literacy Course", path: "/islamic-finance"  },
+    { nomi: "Certification program", path: "/certification"  }
   ];
 
   const tanlanganTil = tillar.find(t => t.kod === til) || tillar[1];
@@ -95,21 +95,28 @@ useEffect(() => {
 
             {programsDropdownOchiq && (
               <div className="absolute left-0 mt-2 w-56 bg-white rounded-md shadow-lg py-2 z-50 border border-gray-100">
-                {dasturlar.map((dastur, index) => (
-                  <a 
-                    key={index}
-                    href="#" 
-                    className={`block px-4 py-2 text-gray-700 hover:text-[#009688] hover:bg-gray-50 ${index < dasturlar.length - 1 ? 'border-b' : ''}`}
-                  >
-                    {dastur.nomi}
-                  </a>
-                ))}
+             {dasturlar.map((dastur, index) => (
+  <Link 
+    key={index}
+    to={dastur.path}
+    className={`block px-4 py-2 text-gray-700 hover:text-[#009688] hover:bg-gray-50 ${index < dasturlar.length - 1 ? 'border-b' : ''}`}
+    onClick={() => setProgramsDropdownOchiq(false)}
+  >
+    {dastur.nomi}
+  </Link>
+))}
               </div>
             )}
           </div>
 
           <a href="#" className="text-gray-700 hover:text-[#009688] font-medium transition duration-200">Finance tools</a>
-          <a href="#" className="text-gray-700 hover:text-[#009688] font-medium transition duration-200">Contact</a>
+      <Link 
+  to="/contact" 
+  className="text-gray-700 hover:text-[#009688] font-medium transition duration-200"
+  onClick={() => setMenuOchiq(false)}
+>
+  Contact
+</Link>
         </nav>
 
         {/* Desktop til tanlovi va Sign in */}
@@ -232,19 +239,19 @@ useEffect(() => {
             
             {programsDropdownOchiq && (
               <div className="pl-4 mt-1 space-y-1">
-                {dasturlar.map((dastur, index) => (
-                  <a
-                    key={index}
-                    href="#"
-                    className="block py-2 px-3 text-gray-600 hover:text-[#009688] hover:bg-gray-50 rounded-md transition duration-200 text-sm"
-                    onClick={() => {
-                      setProgramsDropdownOchiq(false);
-                      setMenuOchiq(false);
-                    }}
-                  >
-                    {dastur.nomi}
-                  </a>
-                ))}
+              {dasturlar.map((dastur, index) => (
+  <button
+    key={index}
+    onClick={() => {
+      navigate(dastur.path);
+      setProgramsDropdownOchiq(false);
+      setMenuOchiq(false);
+    }}
+    className="block w-full text-left py-2 px-3 text-gray-600 hover:text-[#009688] hover:bg-gray-50 rounded-md transition duration-200 text-sm"
+  >
+    {dastur.nomi}
+  </button>
+))}
               </div>
             )}
           </div>
@@ -256,13 +263,13 @@ useEffect(() => {
           >
             Finance tools
           </a>
-          <a 
-            href="#" 
-            className="block py-2.5 px-3 text-gray-700 hover:text-[#009688] hover:bg-gray-50 rounded-md transition duration-200"
-            onClick={() => setMenuOchiq(false)}
-          >
-            Contact
-          </a>
+      <Link 
+  to="/contact" 
+  className="block py-2.5 px-3 text-gray-700 hover:text-[#009688] hover:bg-gray-50 rounded-md transition duration-200"
+  onClick={() => setMenuOchiq(false)}
+>
+  Contact
+</Link>
         </div>
       )}
     </header>

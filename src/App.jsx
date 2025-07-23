@@ -1,27 +1,47 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
 import ShowLayout from './components/showlayout.jsx';
 import Homepage from './pages/HomePage/index.jsx';
-import LoginPage from './pages/AuthPage/_components/Login.jsx';
-import RegisterPage from './pages/AuthPage/_components/Register.jsx';
 import 'react-toastify/dist/ReactToastify.css';
+import { ThreeDot } from 'react-loading-indicators';
+
+// Barcha sahifalarni lazy loading bilan yuklash
+const InternationalPrograms = React.lazy(() => import('./pages/HomePage/Programs/InternationalPage'));
+const SpecializedCourses = React.lazy(() => import('./pages/HomePage/Programs/SpecializedCourses'));
+const IslamicFinance = React.lazy(() => import('./pages/HomePage/Programs/IslamicFinanceLiteracyCourse'));
+const CertificationProgram = React.lazy(() => import('./pages/HomePage/Programs/CertificationProgram'));
+const LoginPage = React.lazy(() => import('./pages/AuthPage/_components/Login'));
+const RegisterPage = React.lazy(() => import('./pages/AuthPage/_components/Register'));
+const ContactPage = React.lazy(() => import('./pages/Contact/index.jsx'));
+
+// Yuklash paytida ko'rsatiladigan komponent
+
+
 function App() {
   return (
     <Router>
-
-      <div className="min-h-screen flex flex-col max-w-[1700px] m-auto  ">
+      <div className="min-h-screen flex flex-col max-w-[1700px] m-auto">
         <ShowLayout>
           <Header />
         </ShowLayout>
 
         <main className="flex-1">
-          <Routes>
-            <Route path="/" element={<Homepage />} />
-            <Route path="/login" element={<LoginPage />} />
-            <Route path="/register" element={<RegisterPage />} />
-          </Routes>
+          <Suspense fallback={<ThreeDot variant="bounce" color="#32cd32" size="large" text="" textColor=""  />}>
+            <Routes>
+              <Route path="/" element={<Homepage />} />
+              <Route path="/international-programs" element={<InternationalPrograms />} />
+              <Route path="/specialized-courses" element={<SpecializedCourses />} />
+              <Route path="/islamic-finance" element={<IslamicFinance />} />
+              <Route path="/certification" element={<CertificationProgram />} />
+              <Route path="/login" element={<LoginPage />} />
+              <Route path="/register" element={<RegisterPage />} />
+            </Routes>
+            <Routes>
+              <Route path="/contact" element={<ContactPage />} />
+            </Routes>
+          </Suspense>
         </main>
 
         <ShowLayout>
