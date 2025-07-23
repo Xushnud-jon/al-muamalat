@@ -74,7 +74,13 @@ useEffect(() => {
 
         {/* Desktop menyu */}
         <nav className="hidden md:flex items-center space-x-8 lg:space-x-12">
-          <a href="#" className="text-gray-700 hover:text-[#009688] font-medium transition duration-200">Home</a>
+          <Link 
+  to="/" 
+  className="text-gray-700 hover:text-[#009688] font-medium transition duration-200"
+  onClick={() => setMenuOchiq(false)}
+>
+  Home
+</Link>
 
           {/* Programs dropdown */}
           <div className="relative">
@@ -109,7 +115,7 @@ useEffect(() => {
             )}
           </div>
 
-          <a href="#" className="text-gray-700 hover:text-[#009688] font-medium transition duration-200">Finance tools</a>
+          <Link to="/" className="text-gray-700 hover:text-[#009688] font-medium transition duration-200">Finance tools</Link>
       <Link 
   to="/contact" 
   className="text-gray-700 hover:text-[#009688] font-medium transition duration-200"
@@ -212,13 +218,13 @@ useEffect(() => {
       {/* Mobile menyu ochiq holatda */}
       {menuOchiq && (
         <div className="md:hidden bg-white py-3 px-4 space-y-2  shadow-inner">
-          <a 
-            href="#" 
+          <Link
+            to="/"
             className="block py-2.5 px-3 text-gray-700 hover:text-[#009688] hover:bg-gray-50 rounded-md transition duration-200"
             onClick={() => setMenuOchiq(false)}
           >
             Home
-          </a>
+          </Link>
           
           {/* Mobile Programs dropdown */}
           <div className="relative" >
@@ -256,13 +262,13 @@ useEffect(() => {
             )}
           </div>
 
-          <a 
-            href="#" 
-            className="block py-2.5 px-3 text-gray-700 hover:text-[#009688] hover:bg-gray-50 rounded-md transition duration-200"
-            onClick={() => setMenuOchiq(false)}
-          >
-            Finance tools
-          </a>
+         <Link 
+  to="/contact" 
+  className="block py-2.5 px-3 text-gray-700 hover:text-[#009688] hover:bg-gray-50 rounded-md transition duration-200"
+  onClick={() => setMenuOchiq(false)}
+>
+              Finance tools
+</Link>
       <Link 
   to="/contact" 
   className="block py-2.5 px-3 text-gray-700 hover:text-[#009688] hover:bg-gray-50 rounded-md transition duration-200"

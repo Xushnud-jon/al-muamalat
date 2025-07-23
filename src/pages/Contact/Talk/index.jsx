@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
-
+import { Link } from 'react-router-dom';
 export default function ContactPage() {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -11,7 +11,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="w-full max-w-7xl min-h-[705px] mx-auto  py-16 flex flex-col md:flex-row">
+    <div className=" max-w-7xl min-h-[705px] mx-auto px-3 py-16 flex flex-col md:flex-row">
       {/* Left Column - Contact Info */}
       <div className="w-full md:w-1/2 pr-0 md:pr-12 mb-12 md:mb-0">
         <div className="mb-12">
@@ -25,26 +25,26 @@ export default function ContactPage() {
         <div className="space-y-10">
           <div>
             <h2 className="text-2xl font-semibold text-[#333] mb-4">Email</h2>
-            <a 
-              href="mailto:beebs@gmail.com" 
+            <Link 
+              to="mailto:beebs@gmail.com" 
               className="text-lg text-[#555] hover:text-[#009688] transition-colors"
             >
               beebs@gmail.com
-            </a>
+            </Link>
           </div>
 
           <div>
             <h2 className="text-2xl font-semibold text-[#333] mb-4">Socials</h2>
             <div className="flex space-x-6 flex-col gap-3">
-              <a href="#" className="text-[#555] hover:text-[#009688] transition-colors underline">
+              <Link to="/" className="text-[#555] hover:text-[#009688] transition-colors underline">
                 <span className="text-lg">Instagram</span>
-              </a>
-              <a href="#" className="text-[#555] hover:text-[#009688] transition-colors underline">
+              </Link>
+              <Link to="/" className="text-[#555] hover:text-[#009688] transition-colors underline">
                 <span className="text-lg">Twitter</span>
-              </a>
-              <a href="#" className="text-[#555] hover:text-[#009688] transition-colors underline">
+              </Link>
+              <Link to="/" className="text-[#555] hover:text-[#009688] transition-colors underline">
                 <span className="text-lg">Facebook</span>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

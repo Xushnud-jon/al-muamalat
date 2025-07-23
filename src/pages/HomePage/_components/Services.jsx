@@ -5,7 +5,7 @@ import InternationalIcon from "../../../assets/images/international-icon.png";
 import CapitalMarketIcon from "../../../assets/images/Marketicon.png";
 import EducationIcon from "../../../assets/images/education-icon.png";
 import ShariahAuditIcon from "../../../assets/images/ShariahAuditIcon.png";
-
+import { Link} from 'react-router-dom';
 const ServicesSection = () => {
   const services = [
     {
@@ -88,15 +88,15 @@ const ServicesSection = () => {
               </p>
               
               <div className="mt-auto">
-                <a 
-                  href="#" 
+                <Link 
+                  to="/" 
                   className="inline-flex items-center px-3 py-2 sm:px-4 sm:py-2 border border-transparent font-opensans font-semibold text-sm sm:text-base leading-[100%] tracking-normal rounded-md text-[#FFFFFF] bg-[#152032] hover:bg-[#1F2D44] transition-colors duration-300 w-full justify-center shadow-sm"
                 >
                   {service.link}
                   <svg className="w-3 h-3 sm:w-4 sm:h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
-                </a>
+                </Link>
               </div>
             </div>
           ))}

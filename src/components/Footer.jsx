@@ -1,7 +1,7 @@
 import React from 'react';
 import Footerlogo from "../assets/images/flogo.png";
 import { FaTelegramPlane, FaInstagram, FaTwitter } from 'react-icons/fa';
-
+import { Link } from 'react-router-dom';
 const Footer = () => {
   return (
     <div className="mt-5 flex flex-col bg-teal-600 text-white">
@@ -28,9 +28,9 @@ const Footer = () => {
       {/* Footer */}
       <footer className="py-4 text-center">
         <div className="flex justify-center space-x-4 mb-2">
-          <a href="https://telegram.com" className="text-xl"><FaTelegramPlane className='text-xl text-[24px] hover:text-[#0088cc] transition duration-300 ease-in-out' /></a>
-          <a href="https://instagram.com" className="text-xl"><FaInstagram className='text-xl text-[24px]  hover:text-pink-500 transition duration-300 ease-in-out' /></a>
-          <a href="https://twitter.com" className="text-xl"><FaTwitter className='text-xl text-[24px]  hover:text-[#1DA1F2] transition duration-300 ease-in-out' /></a>
+          <Link to="https://telegram.com" className="text-xl"><FaTelegramPlane className='text-xl text-[24px] hover:text-[#0088cc] transition duration-300 ease-in-out' /></Link>
+          <Link to="https://instagram.com" className="text-xl"><FaInstagram className='text-xl text-[24px]  hover:text-pink-500 transition duration-300 ease-in-out' /></Link>
+          <Link to="https://twitter.com" className="text-xl"><FaTwitter className='text-xl text-[24px]  hover:text-[#1DA1F2] transition duration-300 ease-in-out' /></Link>
         </div>
         <hr className="border-gray-300 my-2 max-w-7xl mx-auto" />
         <p className="text-sm">Copyright Satyam Studio</p>
