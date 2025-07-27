@@ -31,7 +31,7 @@ const Questions = () => {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto p-3 md:p-0 overflow-hidden">
+    <div className="max-w-7xl mx-auto p-3 md:p-3 2xl:p-0 overflow-hidden">
       <h1 className="font-bold text-[25px] md:text-[40px] leading-[100%] tracking-[0%] font-inter mb-5 text-center">
         Frequently asked questions
       </h1>

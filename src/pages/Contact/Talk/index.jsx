@@ -11,7 +11,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className=" max-w-7xl min-h-[705px] mx-auto px-3 py-16 flex flex-col md:flex-row">
+    <div className=" max-w-7xl min-h-[705px] mx-auto px-3 md:px-0 py-16 flex flex-col md:flex-row">
       {/* Left Column - Contact Info */}
       <div className="w-full md:w-1/2 pr-0 md:pr-12 mb-12 md:mb-0">
         <div className="mb-12">
@@ -35,7 +35,7 @@ export default function ContactPage() {
 
           <div>
             <h2 className="text-2xl font-semibold text-[#333] mb-4">Socials</h2>
-            <div className="flex space-x-6 flex-col gap-3">
+            <div className="flex space-x-6 md:flex-col gap-3">
               <Link to="/" className="text-[#555] hover:text-[#009688] transition-colors underline">
                 <span className="text-lg">Instagram</span>
               </Link>

@@ -1,2 +1,19 @@
 
 @import "tailwindcss";
+@import 'primereact/resources/themes/lara-light-indigo/theme.css'; 
+@import 'primereact/resources/primereact.min.css';
+@import 'primeicons/primeicons.css';
+/* Dumaloq Carousel indikatorlar */
+.p-carousel-indicators .p-carousel-indicator button {
+    width: 10px;
+    height: 10px;
+    border-radius: 9999px;
+    margin: 0 4px;
+    background-color: #d1d5db;
+    transition: background-color 0.3s ease;
+}
+
+.p-carousel-indicators .p-carousel-indicator.p-highlight button {
+    background-color: #009688;
+}
+ 

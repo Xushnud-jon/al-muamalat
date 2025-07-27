@@ -23,7 +23,7 @@ const Workshop = () => {
   };
 
   return (
-    <div className="max-w-7xl m-auto mt-10 flex flex-col rounded-lg bg-white overflow-hidden">
+    <div className="max-w-6xl xl:max-w-7xl m-auto mt-10 flex flex-col rounded-lg bg-white overflow-hidden p-3 xl:p-0">
       <div className="flex flex-col md:flex-row">
         <div className="p-6 bg-[#FAE9D3] w-full md:w-3/5 flex flex-col justify-between">
           <div>
@@ -74,7 +74,7 @@ const Workshop = () => {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="flex-1 px-4 py-2 border-t border-r border-b border-gray-300 rounded-r-md focus:outline-none"
+                  className="flex-1 w-4 px-4 py-2 border-t border-r border-b border-gray-300 rounded-r-md focus:outline-none"
                   required
                 />
               </div>

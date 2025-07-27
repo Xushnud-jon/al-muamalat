@@ -9,7 +9,7 @@ import Questions from './_components/Questions'
 import Workshop from './_components/Workshop'
 const index = () => {
   return (
-    <div>
+    <>
       <Hero/>
       <ServicesSection/>
       <Team/>
@@ -19,7 +19,7 @@ const index = () => {
       <Questions/>
       <Workshop/>
       
-    </div>
+    </>
   )
 }
 

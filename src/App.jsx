@@ -8,7 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { ThreeDot } from 'react-loading-indicators';
 
 // Barcha sahifalarni lazy loading bilan yuklash
-const InternationalPrograms = React.lazy(() => import('./pages/HomePage/Programs/InternationalPage'));
+const InternationalPrograms = React.lazy(() => import('./pages/HomePage/Programs/InternationalPage/index.jsx'));
 const SpecializedCourses = React.lazy(() => import('./pages/HomePage/Programs/SpecializedCourses'));
 const IslamicFinance = React.lazy(() => import('./pages/HomePage/Programs/IslamicFinanceLiteracyCourse'));
 const CertificationProgram = React.lazy(() => import('./pages/HomePage/Programs/CertificationProgram'));
