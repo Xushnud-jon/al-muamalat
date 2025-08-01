@@ -15,6 +15,8 @@ const CertificationProgram = React.lazy(() => import('./pages/HomePage/Programs/
 const LoginPage = React.lazy(() => import('./pages/AuthPage/_components/Login'));
 const RegisterPage = React.lazy(() => import('./pages/AuthPage/_components/Register'));
 const ContactPage = React.lazy(() => import('./pages/Contact/index.jsx'));
+const ProfilePage = React.lazy(() => import('./pages/Profile/index.jsx'));
+
 
 function App() {
   return (
@@ -43,6 +45,7 @@ function App() {
               <Route path="/login" element={<LoginPage />} />
               <Route path="/register" element={<RegisterPage />} />
               <Route path="/contact" element={<ContactPage />} />
+              <Route path="/profile" element={<ProfilePage />} />
             </Routes>
           </Suspense>
         </main>
