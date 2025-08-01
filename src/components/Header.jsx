@@ -37,7 +37,7 @@ const Header = () => {
   const dasturlar = [
     { nomi: "International educational programs", path: "/international-programs" },
     { nomi: "Specialized courses", path: "/specialized-courses" },
-    { nomi: "Islamic Finance Literacy Course", path: "/islamic-finance" },
+    { nomi: "Islamic Finance Literacy Course", path: "/profile" },
     { nomi: "Certification program", path: "/certification" }
   ];
 
@@ -80,7 +80,7 @@ const Header = () => {
               </div>
             )}
           </div>
-          <Link to="/finance-tools" className="text-gray-700 hover:text-[#009688] font-medium transition duration-200 px-2 py-1">Finance tools</Link>
+          <Link to="/profile" className="text-gray-700 hover:text-[#009688] font-medium transition duration-200 px-2 py-1">Finance tools</Link>
           <Link to="/contact" className="text-gray-700 hover:text-[#009688] font-medium transition duration-200 px-2 py-1" onClick={() => setMenuOchiq(false)}>Contact</Link>
         </nav>
 
@@ -160,7 +160,7 @@ const Header = () => {
               </div>
             )}
           </div>
-          <Link to="/finance-tools" className="block py-2.5 px-3 text-gray-700 hover:text-[#009688] hover:bg-gray-50 rounded-md transition duration-200" onClick={() => setMenuOchiq(false)}>Finance tools</Link>
+          <Link to="/profile" className="block py-2.5 px-3 text-gray-700 hover:text-[#009688] hover:bg-gray-50 rounded-md transition duration-200" onClick={() => setMenuOchiq(false)}>Finance tools</Link>
           <Link to="/contact" className="block py-2.5 px-3 text-gray-700 hover:text-[#009688] hover:bg-gray-50 rounded-md transition duration-200" onClick={() => setMenuOchiq(false)}>Contact</Link>
         </div>
       )}
